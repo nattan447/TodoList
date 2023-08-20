@@ -17,17 +17,19 @@ export default function App() {
   const [text, setText] = useState("");
   const [couter, setCounter] = useState(0);
   const [emptytxt, setemptytxt] = useState(undefined);
+  const [colum, setColum] = useState(2);
 
   const handletxt = (texto) => {
     setText(texto);
   };
   const additem = () => {
     if (text != "") {
+      setemptytxt(undefined);
       setCounter(couter + 1);
       const array = [...data, { task: text, id: couter, completed: false }];
       setData(array);
       setText("");
-    }
+    } else setemptytxt("campo não nulo");
   };
   function handleremove(iditem) {
     const noremoved = data.filter((item) => item.id != iditem);
@@ -49,13 +51,13 @@ export default function App() {
       ? liststyle.completedTask
       : liststyle.taskItem;
     return (
-      <View style={itemstyle}>
+      <View style={liststyle.flatview}>
         <TouchableOpacity
           onPress={() => {
             toglecompleted(item.id);
           }}
         >
-          <Text style={{ color: "red" }}>{item.task}</Text>
+          <Text style={itemstyle}>{item.task}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={liststyle.removetaskbtn}
@@ -71,30 +73,26 @@ export default function App() {
 
   return (
     <View style={liststyle.container}>
-      <View style={liststyle.header}>
-        <Text style={liststyle.headertxt}>Lista de tarefas</Text>
-      </View>
-      <View style={liststyle.user}>
-        <Text>user</Text>
-      </View>
       <View style={liststyle.inputview}>
         <TextInput
-          placeholderTextColor="red"
+          placeholderTextColor="black"
+          maxFontSizeMultiplier={colum}
           style={liststyle.inputadd}
           placeholder="digite sua task de hoje"
           value={text}
           onChangeText={handletxt}
         ></TextInput>
+        <Text style={{ color: "red" }}>{emptytxt}</Text>
         <TouchableOpacity style={liststyle.btnadd} onPress={additem}>
           <Text style={liststyle.btntxt}>Adicionar</Text>
         </TouchableOpacity>
-        <FlatList
-          horizontal={true}
-          data={data}
-          keyExtractor={(item) => item.id}
-          renderItem={render}
-        ></FlatList>
       </View>
+      <FlatList
+        numColumns={colum}
+        data={data}
+        keyExtractor={(item) => item.id}
+        renderItem={render}
+      ></FlatList>
     </View>
   );
 }

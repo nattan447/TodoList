@@ -7,37 +7,23 @@ export default StyleSheet.create({
     backgroundColor: "#D8DFE2",
     alignItems: "center",
   },
-  headertxt: {
-    color: "white",
-    fontSize: 30,
-    fontWeight: "bold",
-    textTransform: "uppercase",
-  },
-  header: {
-    backgroundColor: "red",
-    width: 800,
-    alignItems: "center",
-    height: 200,
-    justifyContent: "center",
-    position: "absolute",
-  },
   inputview: {
     width: 360,
     backgroundColor: "white",
     borderRadius: 10,
-    height: 300,
-    marginTop: 80,
+    height: 180,
+
     alignItems: "center",
-    paddingTop: 40,
+    paddingTop: 20,
     borderBottomColor: "#BCC6CC",
     borderBottomWidth: 5,
   },
   inputadd: {
     borderBottomWidth: 2,
     height: 40,
-    width: 150,
+    width: 180,
     borderBottomColor: "black",
-    fontSize: 14,
+    fontSize: 17,
   },
   btnadd: {
     borderRadius: 9,
@@ -56,9 +42,12 @@ export default StyleSheet.create({
 
   taskItem: {
     color: "black",
+    fontSize: 20,
   },
   completedTask: {
-    backgroundColor: "green",
+    fontSize: 20,
+    color: "green",
+    textDecorationLine: "line-through",
   },
   removetaskbtn: {
     backgroundColor: "red",
@@ -73,14 +62,9 @@ export default StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
   },
-  user: {
-    marginTop: 150,
+  flatview: {
+    marginTop: 30,
+    width: 100,
     alignItems: "center",
-    width: 360,
-    backgroundColor: "white",
-    borderRadius: 10,
-    height: 200,
-    borderBottomColor: "#BCC6CC",
-    borderBottomWidth: 5,
   },
 });
