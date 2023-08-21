@@ -6,7 +6,7 @@ import Header from "./components/header";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
+      {/* <Header /> */}
       <List />
       <StatusBar style="auto" />
     </SafeAreaView>

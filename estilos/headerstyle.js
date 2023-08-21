@@ -2,18 +2,17 @@ import { StyleSheet, Text, View } from "react-native";
 
 export default StyleSheet.create({
   headertxt: {
-    color: "white",
+    color: "red",
     fontSize: 30,
     fontWeight: "bold",
     textTransform: "uppercase",
   },
   header: {
-    backgroundColor: "red",
     width: 800,
+    height: 120,
     alignItems: "center",
-    height: 170,
+    flexDirection: "row",
     justifyContent: "center",
-    position: "absolute",
   },
   user: {
     marginTop: 130,
